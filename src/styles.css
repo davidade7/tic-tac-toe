@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cell {
+  @apply w-36 flex justify-center items-center border;
+}
