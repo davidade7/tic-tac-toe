@@ -9,3 +9,6 @@
 .cross .cross-svg, .circle .circle-svg {
   @apply block;
 }
+.active-player {
+  @apply font-bold bg-red-400
+}

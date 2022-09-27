@@ -13,8 +13,14 @@
     </header>
     <main class="m-auto"> 
       <div class="flex justify-center mt-10 text-4xl">
-        <div class="px-8 py-4 active-player" id="player-1">Player 1</div>
-        <div class="px-8 py-4" id="player-2">Player 2</div>
+        <div class="px-8 py-4 flex items-center active-player" id="player-1">
+          <img class="w-12" src="./build/assets/svg/cross.svg" alt="cross">
+          <span class="pl-4">Player 1</span>
+        </div>
+        <div class="px-8 py-4 flex items-center" id="player-2">
+          <span class="pr-4">Player 2</span>
+          <img class="w-12" src="./build/assets/svg/circle.svg" alt="circle">
+        </div>
       </div>
       <div class="pt-10 flex justify-center" id="grid">
         <div class="border">
