@@ -33,7 +33,7 @@ let changeActivePlayer = () => {
 let resetGame = () => {
   // reset table
   table = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive'];
-  // set player 1 active
+  // set player1 active
   activePlayer = 'player1'
   player2.classList.remove('active-player')
   player1.classList.add('active-player')
@@ -60,6 +60,7 @@ let resetGame = () => {
   console.log('game restarted')
 }
 
+// listen if restart button is pressed
 restart.addEventListener('click', () => {
   resetGame()
 })
@@ -67,15 +68,94 @@ restart.addEventListener('click', () => {
 // Table of choices
 let table = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive']
 
+// Function to see if there is a winner
+let checkWinner = (game) => {
+  console.log(game)
+  switch (true) {
+    // line 1
+    case game[0] === game[1] && game[0] === game[2] && game[0] === 'cross':
+      console.log('Victory of player 1');
+      resetGame()
+      break;
+    case game[0] === game[1] && game[0] === game[2] && game[0] === 'circle':
+      console.log('Victory of player 2');
+      resetGame()
+      break;
+    // line 2
+    case game[3] === game[4] && game[3] === game[5] && game[3] === 'cross':
+      console.log('Victory of player 1');
+      resetGame()
+      break;
+    case game[3] === game[4] && game[3] === game[5] && game[3] === 'circle':
+      console.log('Victory of player 2');
+      resetGame()
+      break;
+    // line 3
+    case game[6] === game[7] && game[6] === game[8] && game[6] === 'cross':
+      console.log('Victory of player 1');
+      resetGame()
+      break;
+    case game[6] === game[7] && game[6] === game[8] && game[6] === 'circle':
+      console.log('Victory of player 2');
+      resetGame()
+      break; 
+    // column 1 
+    case game[0] === game[3] && game[0] === game[6] && game[0] === 'cross':
+      console.log('Victory of player 1');
+      resetGame()
+      break;
+    case game[0] === game[3] && game[0] === game[6] && game[0] === 'circle':
+      console.log('Victory of player 2');
+      resetGame()
+      break;  
+    // column 2 
+    case game[1] === game[4] && game[1] === game[7] && game[1] === 'cross':
+      console.log('Victory of player 1');
+      resetGame()
+      break;
+    case game[1] === game[4] && game[1] === game[7] && game[1] === 'circle':
+      console.log('Victory of player 2');
+      resetGame()
+      break;  
+    // column 3
+    case game[2] === game[5] && game[2] === game[8] && game[2] === 'cross':
+      console.log('Victory of player 1');
+      resetGame()
+      break;
+    case game[2] === game[5] && game[2] === game[8] && game[2] === 'circle':
+      console.log('Victory of player 2');
+      resetGame()
+      break; 
+    // diagonal 1
+    case game[0] === game[4] && game[0] === game[8] && game[0] === 'cross':
+      console.log('Victory of player 1');
+      resetGame()
+      break;
+    case game[0] === game[4] && game[0] === game[8] && game[0] === 'circle':
+      console.log('Victory of player 2');
+      resetGame()
+      break;  
+    // diagonal 2
+    case game[2] === game[4] && game[4] === game[6] && game[4] === 'cross':
+      console.log('Victory of player 1');
+      resetGame()
+      break;
+    case game[2] === game[4] && game[4] === game[6] && game[4] === 'circle':
+      console.log('Victory of player 2');
+      resetGame()
+      break;  
+  }
+}
+
 grid.addEventListener('click', (e) => {
   let cell = e.target.id;
-  console.log(cell);
+  // console.log(cell);
   let tablePos = parseInt(cell.substring(4,5)) - 1
-  console.log(tablePos)
+  // console.log(tablePos)
   
   if (table[tablePos] === 'inactive') {
     if (activePlayer === 'player1') {
-      console.log(activePlayer)
+      // console.log(activePlayer)
       table[tablePos] = 'cross'
       switch (cell) {
         case 'cell1':
@@ -106,10 +186,11 @@ grid.addEventListener('click', (e) => {
           cell9.classList.add('cross');
           break;
       }
-      console.log(table)
+      // console.log(table)
       changeActivePlayer()
+      checkWinner(table);
     } else {
-      console.log(activePlayer)
+      // console.log(activePlayer)
       table[tablePos] = 'circle'
       switch (cell) {
         case 'cell1':
@@ -140,8 +221,9 @@ grid.addEventListener('click', (e) => {
           cell9.classList.add('circle');
           break;
       }
-      console.log(table)
       changeActivePlayer()
+      checkWinner(table);
+      // console.log(table)
     }
   } else {
     console.log('cannot select this cell')
