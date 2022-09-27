@@ -1,12 +1,14 @@
-const cell1 = document.querySelector('#cell-1');
-const cell2 = document.querySelector('#cell-2');
-const cell3 = document.querySelector('#cell-3');
-const cell4 = document.querySelector('#cell-4');
-const cell5 = document.querySelector('#cell-5');
-const cell6 = document.querySelector('#cell-6');
-const cell7 = document.querySelector('#cell-7');
-const cell8 = document.querySelector('#cell-8');
-const cell9 = document.querySelector('#cell-9');
+const grid = document.querySelector('#grid');
+
+const cell1 = document.querySelector('#cell1');
+const cell2 = document.querySelector('#cell2');
+const cell3 = document.querySelector('#cell3');
+const cell4 = document.querySelector('#cell4');
+const cell5 = document.querySelector('#cell5');
+const cell6 = document.querySelector('#cell6');
+const cell7 = document.querySelector('#cell7');
+const cell8 = document.querySelector('#cell8');
+const cell9 = document.querySelector('#cell9');
 
 const player1 = document.querySelector('#player-1');
 const player2 = document.querySelector('#player-2');
@@ -62,43 +64,82 @@ restart.addEventListener('click', () => {
   resetGame()
 })
 
-
 // Table of choices
 let table = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive']
 
-cell1.addEventListener('click', () => {
-  if (table[0] === 'inactive') {
+grid.addEventListener('click', (e) => {
+  let cell = e.target.id;
+  console.log(cell);
+  let tablePos = parseInt(cell.substring(4,5)) - 1
+  console.log(tablePos)
+  
+  if (table[tablePos] === 'inactive') {
     if (activePlayer === 'player1') {
       console.log(activePlayer)
-      table[0] = 'cross'
-      cell1.classList.add('cross')
+      table[tablePos] = 'cross'
+      switch (cell) {
+        case 'cell1':
+          cell1.classList.add('cross');
+          break;
+        case 'cell2':
+          cell2.classList.add('cross');
+          break;
+        case 'cell3':
+          cell3.classList.add('cross');
+          break;
+        case 'cell4':
+          cell4.classList.add('cross');
+          break;
+        case 'cell5':
+          cell5.classList.add('cross');
+          break;
+        case 'cell6':
+          cell6.classList.add('cross');
+          break;
+        case 'cell7':
+          cell7.classList.add('cross');
+          break;
+        case 'cell8':
+          cell8.classList.add('cross');
+          break;
+        case 'cell9':
+          cell9.classList.add('cross');
+          break;
+      }
       console.log(table)
       changeActivePlayer()
     } else {
       console.log(activePlayer)
-      table[0] = 'circle'
-      cell1.classList.add('circle')
-      console.log(table)
-      changeActivePlayer()
-    }
-  } else {
-    console.log('cannot select this cell')
-  }
-})
-
-
-cell2.addEventListener('click', () => {
-  if (table[1] === 'inactive') {
-    if (activePlayer === 'player1') {
-      console.log(activePlayer)
-      table[1] = 'cross'
-      cell2.classList.add('cross')
-      console.log(table)
-      changeActivePlayer()
-    } else {
-      console.log(activePlayer)
-      table[1] = 'circle'
-      cell2.classList.add('circle')
+      table[tablePos] = 'circle'
+      switch (cell) {
+        case 'cell1':
+          cell1.classList.add('circle');
+          break;
+        case 'cell2':
+          cell2.classList.add('circle');
+          break;
+        case 'cell3':
+          cell3.classList.add('circle');
+          break;
+        case 'cell4':
+          cell4.classList.add('circle');
+          break;
+        case 'cell5':
+          cell5.classList.add('circle');
+          break;
+        case 'cell6':
+          cell6.classList.add('circle');
+          break;
+        case 'cell7':
+          cell7.classList.add('circle');
+          break;
+        case 'cell8':
+          cell8.classList.add('circle');
+          break;
+        case 'cell9':
+          cell9.classList.add('circle');
+          break;
+      }
       console.log(table)
       changeActivePlayer()
     }
