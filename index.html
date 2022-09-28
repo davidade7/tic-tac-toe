@@ -8,11 +8,11 @@
     <title>Tic Tac Toe</title>
   </head>
   <body class="w-screen">
-    <header class="flex justify-center mt-20"> 
-      <h1 class="text-6xl">Tic Tac Toe</h1>
+    <header class="flex justify-center mt-16"> 
+      <h1 class="text-6xl font-bold">Tic Tac Toe</h1>
     </header>
     <main class="m-auto"> 
-      <div class="flex justify-center mt-10 text-4xl">
+      <div class="flex justify-center mt-8 text-4xl">
         <div class="px-8 py-4 flex items-center active-player" id="player-1">
           <img class="w-12" src="./build/assets/svg/cross.svg" alt="cross">
           <span class="pl-4">Player 1</span>
@@ -66,21 +66,27 @@
             </div>
           </div>
 
+          <!-- Lines -->
           <div class="absolute bg-red-600 hidden w-4 top-2 left-16 bottom-2 rounded-full" id="column-1"></div>
           <div class="absolute bg-red-600 hidden w-4 top-2 left-52 bottom-2 rounded-full" id="column-2"></div>
           <div class="absolute bg-red-600 hidden w-4 top-2 right-16 bottom-2 rounded-full" id="column-3"></div>
-
           <div class="absolute bg-red-600 hidden h-4 left-4 right-4 top-16 rounded-full" id="line-1"></div>
           <div class="absolute bg-red-600 hidden h-4 left-4 right-4 top-52 rounded-full" id="line-2"></div>
           <div class="absolute bg-red-600 hidden h-4 left-4 right-4 bottom-16 rounded-full" id="line-3"></div>
-
           <div class="absolute bg-red-600 hidden h-4 -left-12 -right-12 top-52 rotate-45 rounded-full" id="diagonal-1"></div>
           <div class="absolute bg-red-600 hidden h-4 -left-12 -right-12 top-52 -rotate-45 rounded-full" id="diagonal-1"></div>
-
         </div>
       </div>
+
       <div class="flex justify-around mt-10 text-4xl">
         <div id="btn-restart" class="bg-red-500 px-4 py-2 rounded-xl border-2 border-red-500 hover:cursor-pointer hover:bg-red-300">Restart</div>
+      </div>
+
+      <div class="mt-8 text-center flex justify-center ">
+        <p class="bg-amber-200 px-8 py-2 rounded-lg flex justify-center items-center hidden" id="message-box">
+          <img class="h-6 pr-4" src="./build/assets/svg/crown.svg" alt="crown">
+          <span class="text-lg" id="message">TEST</span>
+        </p>
       </div>
     </main>
     <script src="./scripts.js"></script>
