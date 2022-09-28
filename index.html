@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="pt-10 flex justify-center" id="grid">
-        <div class="border">
+        <div class="border relative">
           <div class="flex h-36">
             <div class="cell" id="cell1">
               <img class="scale-75 hidden cross-svg" src="./build/assets/svg/cross.svg" alt="cross">
@@ -65,6 +65,18 @@
               <img class="scale-75 hidden circle-svg" src="./build/assets/svg/circle.svg" alt="circle">
             </div>
           </div>
+
+          <div class="absolute bg-red-600 hidden w-4 top-2 left-16 bottom-2 rounded-full" id="column-1"></div>
+          <div class="absolute bg-red-600 hidden w-4 top-2 left-52 bottom-2 rounded-full" id="column-2"></div>
+          <div class="absolute bg-red-600 hidden w-4 top-2 right-16 bottom-2 rounded-full" id="column-3"></div>
+
+          <div class="absolute bg-red-600 hidden h-4 left-4 right-4 top-16 rounded-full" id="line-1"></div>
+          <div class="absolute bg-red-600 hidden h-4 left-4 right-4 top-52 rounded-full" id="line-2"></div>
+          <div class="absolute bg-red-600 hidden h-4 left-4 right-4 bottom-16 rounded-full" id="line-3"></div>
+
+          <div class="absolute bg-red-600 hidden h-4 -left-12 -right-12 top-52 rotate-45 rounded-full" id="diagonal-1"></div>
+          <div class="absolute bg-red-600 hidden h-4 -left-12 -right-12 top-52 -rotate-45 rounded-full" id="diagonal-1"></div>
+
         </div>
       </div>
       <div class="flex justify-around mt-10 text-4xl">

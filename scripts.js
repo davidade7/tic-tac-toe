@@ -10,6 +10,15 @@ const cell7 = document.querySelector('#cell7');
 const cell8 = document.querySelector('#cell8');
 const cell9 = document.querySelector('#cell9');
 
+const line1 = document.querySelector('#line-1');
+const line2 = document.querySelector('#line-2');
+const line3 = document.querySelector('#line-3');
+const column1 = document.querySelector('#column-1');
+const column2 = document.querySelector('#column-2');
+const column3 = document.querySelector('#column-3');
+const diagonal1 = document.querySelector('#diagonal-1');
+const diagonal2 = document.querySelector('#diagonal-2');
+
 const player1 = document.querySelector('#player-1');
 const player2 = document.querySelector('#player-2');
 let activePlayer = 'player1'
@@ -69,80 +78,89 @@ restart.addEventListener('click', () => {
 let table = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive']
 
 // Function to see if there is a winner
+let timer
+let showLine = (line) => {
+  line.classList.remove('hidden');
+  timer = setTimeout(() => {
+    resetGame();
+    line.classList.add('hidden');
+  }, 3000);
+}
+
 let checkWinner = (game) => {
   console.log(game)
   switch (true) {
     // line 1
     case game[0] === game[1] && game[0] === game[2] && game[0] === 'cross':
       console.log('Victory of player 1');
-      resetGame()
+      showLine(line1);
       break;
     case game[0] === game[1] && game[0] === game[2] && game[0] === 'circle':
       console.log('Victory of player 2');
-      resetGame()
+      showLine(line1);
       break;
     // line 2
     case game[3] === game[4] && game[3] === game[5] && game[3] === 'cross':
       console.log('Victory of player 1');
-      resetGame()
+      showLine(line2);
       break;
     case game[3] === game[4] && game[3] === game[5] && game[3] === 'circle':
       console.log('Victory of player 2');
-      resetGame()
+      showLine(line2);
       break;
     // line 3
     case game[6] === game[7] && game[6] === game[8] && game[6] === 'cross':
       console.log('Victory of player 1');
-      resetGame()
+      showLine(line3);
       break;
     case game[6] === game[7] && game[6] === game[8] && game[6] === 'circle':
       console.log('Victory of player 2');
-      resetGame()
+      showLine(line3);
       break; 
     // column 1 
     case game[0] === game[3] && game[0] === game[6] && game[0] === 'cross':
       console.log('Victory of player 1');
-      resetGame()
+      showLine(column1);
       break;
     case game[0] === game[3] && game[0] === game[6] && game[0] === 'circle':
       console.log('Victory of player 2');
-      resetGame()
+      showLine(column1);
       break;  
     // column 2 
     case game[1] === game[4] && game[1] === game[7] && game[1] === 'cross':
       console.log('Victory of player 1');
-      resetGame()
+      showLine(column2);
       break;
     case game[1] === game[4] && game[1] === game[7] && game[1] === 'circle':
       console.log('Victory of player 2');
-      resetGame()
+      showLine(column2);
       break;  
     // column 3
     case game[2] === game[5] && game[2] === game[8] && game[2] === 'cross':
       console.log('Victory of player 1');
-      resetGame()
+      showLine(column3);
       break;
     case game[2] === game[5] && game[2] === game[8] && game[2] === 'circle':
       console.log('Victory of player 2');
-      resetGame()
+      showLine(column3);
       break; 
     // diagonal 1
     case game[0] === game[4] && game[0] === game[8] && game[0] === 'cross':
       console.log('Victory of player 1');
-      resetGame()
+      showLine(diagonal1);
       break;
     case game[0] === game[4] && game[0] === game[8] && game[0] === 'circle':
       console.log('Victory of player 2');
-      resetGame()
+      showLine(diagonal1);
       break;  
     // diagonal 2
     case game[2] === game[4] && game[4] === game[6] && game[4] === 'cross':
       console.log('Victory of player 1');
-      resetGame()
+      showLine(diagonal2);
       break;
     case game[2] === game[4] && game[4] === game[6] && game[4] === 'circle':
       console.log('Victory of player 2');
-      resetGame()
+      showLine(diagonal2);
       break;  
   }
 }
