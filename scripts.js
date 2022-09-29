@@ -96,7 +96,7 @@ let showLine = (line, player) => {
 }
 
 let checkWinner = (game) => {
-  console.log(game)
+  // console.log(game)
   switch (true) {
     // line 1
     case game[0] === game[1] && game[0] === game[2] && game[0] === 'cross':
