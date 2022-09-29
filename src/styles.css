@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .cell {
-  @apply w-36 flex justify-center items-center border;
+  @apply w-28 sm:w-36 flex justify-center items-center border;
 }
 
 .cross .cross-svg, .circle .circle-svg {
