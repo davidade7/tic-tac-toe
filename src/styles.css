@@ -4,11 +4,28 @@
 
 .cell {
   @apply w-28 sm:w-36 flex justify-center items-center border;
-}
+};
 
 .cross .cross-svg, .circle .circle-svg {
   @apply block;
-}
+};
 .active-player {
-  @apply font-bold bg-red-400
+  @apply font-bold bg-red-400;
+};
+.line-def {
+  @apply absolute bg-red-600 rounded-full;
+};
+
+.showline {
+  width: calc(100% - 32px);
+  animation: test 1s ease;
+}
+
+@keyframes test {
+  from {
+    transform: scale(0);
+  } 
+  to {
+    transform: scale(1);
+  }
 }

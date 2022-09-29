@@ -83,13 +83,13 @@ let table = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inacti
 // Function to see if there is a winner
 let timer
 let showLine = (line, player) => {
-  line.classList.remove('hidden');
+  line.classList.add('showline');
   messageBox.classList.remove('hidden');
   messageBox.classList.add('flex');
   message.innerHTML = `Victory of ${player}. Game restarting ...`
   timer = setTimeout(() => {
     resetGame();
-    line.classList.add('hidden');
+    line.classList.remove('showline');
     messageBox.classList.add('hidden')
     messageBox.classList.remove('flex');
   }, 3000);
