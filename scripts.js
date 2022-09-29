@@ -85,11 +85,13 @@ let timer
 let showLine = (line, player) => {
   line.classList.remove('hidden');
   messageBox.classList.remove('hidden');
+  messageBox.classList.add('flex');
   message.innerHTML = `Victory of ${player}. Game restarting ...`
   timer = setTimeout(() => {
     resetGame();
     line.classList.add('hidden');
     messageBox.classList.add('hidden')
+    messageBox.classList.remove('flex');
   }, 3000);
 }
 
