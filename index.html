@@ -8,11 +8,11 @@
     <title>Tic Tac Toe</title>
   </head>
   <body class="w-screen">
-    <header class="flex justify-center mt-10 sm:mt-16"> 
+    <header class="flex justify-center mt-5 sm:mt-16"> 
       <h1 class="text-5xl sm:text-6xl font-bold">Tic Tac Toe</h1>
     </header>
     <main class="m-auto"> 
-      <div class="flex justify-center mt-8 text-2xl sm:text-4xl">
+      <div class="flex justify-center mt-5 sm:mt-8 text-2xl sm:text-4xl">
         <div class="px-4 py-3 sm:px-8 sm:py-4 flex items-center active-player" id="player-1">
           <img class="w-8 sm:w-12" src="./build/assets/svg/cross.svg" alt="cross">
           <span class="pl-4">Player 1</span>
@@ -22,7 +22,7 @@
           <img class="w-8 sm:w-12" src="./build/assets/svg/circle.svg" alt="circle">
         </div>
       </div>
-      <div class="pt-10 flex justify-center" id="grid">
+      <div class="mt-8 sm:mt-10 flex justify-center" id="grid">
         <div class="border relative">
           <div class="flex h-28 sm:h-36">
             <div class="cell" id="cell1">
@@ -78,11 +78,11 @@
         </div>
       </div>
 
-      <div class="flex justify-around mt-10 text-3xl sm:text-4xl">
+      <div class="flex justify-around mt-5 sm:mt-10 text-3xl sm:text-4xl">
         <div id="btn-restart" class="bg-red-500 px-2 py-1 sm:px-4 sm:py-2 rounded-xl border-2 border-red-500 hover:cursor-pointer hover:bg-red-300">Restart</div>
       </div>
 
-      <div class="mt-8 text-center flex justify-center ">
+      <div class="mt-5 sm:mt-8 text-center flex justify-center ">
         <p class="bg-amber-200 px-4 sm:px-8 py-2 rounded-lg justify-center items-center hidden" id="message-box">
           <img class="h-4 sm:h-6 pr-2 sm:pr-4" src="./build/assets/svg/crown.svg" alt="crown">
           <span class="text-md sm:text-lg" id="message">TEST</span>
