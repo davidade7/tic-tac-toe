@@ -80,17 +80,26 @@ restart.addEventListener('click', () => {
 // Table of choices
 let table = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inactive']
 
+// Function to lock cells
+let lockCells = () => {
+  table = ['']
+} 
+
 // Function to see if there is a winner
 let timer
 let showLine = (line, player) => {
   if (line === row1 || line === row2 || line === row3) {
     line.classList.add('showrow');
+    lockCells();
   } else if (line === column1 || line === column2 || line === column3) {
     line.classList.add('showcolumn');
+    lockCells();
   } else if (line === diagonal1) {
     line.classList.add('showdiagonal1');
+    lockCells();
   } else {
     line.classList.add('showdiagonal2');
+    lockCells();
   }; 
   messageBox.classList.remove('hidden');
   messageBox.classList.add('flex');
@@ -247,6 +256,6 @@ grid.addEventListener('click', (e) => {
       // console.log(table)
     }
   } else {
-    console.log('cannot select this cell')
+    // console.log('cannot select this cell')
   }
 })
