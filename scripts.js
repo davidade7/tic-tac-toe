@@ -1,5 +1,7 @@
+// Queries
 const grid = document.querySelector('#grid');
 
+// queries for each cells
 const cell1 = document.querySelector('#cell1');
 const cell2 = document.querySelector('#cell2');
 const cell3 = document.querySelector('#cell3');
@@ -9,7 +11,7 @@ const cell6 = document.querySelector('#cell6');
 const cell7 = document.querySelector('#cell7');
 const cell8 = document.querySelector('#cell8');
 const cell9 = document.querySelector('#cell9');
-
+// queries for each lines
 const row1 = document.querySelector('#row-1');
 const row2 = document.querySelector('#row-2');
 const row3 = document.querySelector('#row-3');
@@ -18,12 +20,12 @@ const column2 = document.querySelector('#column-2');
 const column3 = document.querySelector('#column-3');
 const diagonal1 = document.querySelector('#diagonal-1');
 const diagonal2 = document.querySelector('#diagonal-2');
-
+// other queries
 const messageBox = document.querySelector('#message-box');
 const message = document.querySelector('#message');
-
 const player1 = document.querySelector('#player-1');
 const player2 = document.querySelector('#player-2');
+
 let activePlayer = 'player1'
 
 const restart = document.querySelector('#btn-restart')
