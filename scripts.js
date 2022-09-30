@@ -10,9 +10,9 @@ const cell7 = document.querySelector('#cell7');
 const cell8 = document.querySelector('#cell8');
 const cell9 = document.querySelector('#cell9');
 
-const line1 = document.querySelector('#line-1');
-const line2 = document.querySelector('#line-2');
-const line3 = document.querySelector('#line-3');
+const row1 = document.querySelector('#row-1');
+const row2 = document.querySelector('#row-2');
+const row3 = document.querySelector('#row-3');
 const column1 = document.querySelector('#column-1');
 const column2 = document.querySelector('#column-2');
 const column3 = document.querySelector('#column-3');
@@ -83,13 +83,24 @@ let table = ['inactive', 'inactive', 'inactive', 'inactive', 'inactive', 'inacti
 // Function to see if there is a winner
 let timer
 let showLine = (line, player) => {
-  line.classList.add('showline');
+  if (line === row1 || line === row2 || line === row3) {
+    line.classList.add('showrow');
+  } else if (line === column1 || line === column2 || line === column3) {
+    line.classList.add('showcolumn');
+  } else if (line === diagonal1) {
+    line.classList.add('showdiagonal1');
+  } else {
+    line.classList.add('showdiagonal2');
+  }; 
   messageBox.classList.remove('hidden');
   messageBox.classList.add('flex');
   message.innerHTML = `Victory of ${player}. Game restarting ...`
   timer = setTimeout(() => {
     resetGame();
-    line.classList.remove('showline');
+    line.classList.remove('showrow');
+    line.classList.remove('showcolumn');
+    line.classList.remove('showdiagonal1');
+    line.classList.remove('showdiagonal2');
     messageBox.classList.add('hidden')
     messageBox.classList.remove('flex');
   }, 3000);
@@ -98,26 +109,26 @@ let showLine = (line, player) => {
 let checkWinner = (game) => {
   // console.log(game)
   switch (true) {
-    // line 1
+    // row 1
     case game[0] === game[1] && game[0] === game[2] && game[0] === 'cross':
-      showLine(line1, 'player 1');
+      showLine(row1, 'player 1');
       break;
     case game[0] === game[1] && game[0] === game[2] && game[0] === 'circle':
-      showLine(line1, 'player 2');
+      showLine(row1, 'player 2');
       break;
-    // line 2
+    // row 2
     case game[3] === game[4] && game[3] === game[5] && game[3] === 'cross':
-      showLine(line2, 'player 1');
+      showLine(row2, 'player 1');
       break;
     case game[3] === game[4] && game[3] === game[5] && game[3] === 'circle':
-      showLine(line2, 'player 2');
+      showLine(row2, 'player 2');
       break;
-    // line 3
+    // row 3
     case game[6] === game[7] && game[6] === game[8] && game[6] === 'cross':
-      showLine(line3, 'player 1');
+      showLine(row3, 'player 1');
       break;
     case game[6] === game[7] && game[6] === game[8] && game[6] === 'circle':
-      showLine(line3, 'player 2');
+      showLine(row3, 'player 2');
       break; 
     // column 1 
     case game[0] === game[3] && game[0] === game[6] && game[0] === 'cross':

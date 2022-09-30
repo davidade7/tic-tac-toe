@@ -5,7 +5,6 @@
 .cell {
   @apply w-28 sm:w-36 flex justify-center items-center border;
 };
-
 .cross .cross-svg, .circle .circle-svg {
   @apply block;
 };
@@ -16,16 +15,62 @@
   @apply absolute bg-red-600 rounded-full;
 };
 
-.showline {
+/* Animation for the rows */
+.showrow {
   width: calc(100% - 32px);
-  animation: test 1s ease;
+  animation: rowAnimation 0.4s ease;
 }
-
-@keyframes test {
+@keyframes rowAnimation {
   from {
-    transform: scale(0);
+    transform: scaleX(0);
+    transform-origin: left;
   } 
   to {
-    transform: scale(1);
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Animation for the columns */
+.showcolumn {
+  height: calc(100% - 32px);
+  animation: columnAnimation 0.4s ease;
+}
+@keyframes columnAnimation {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  } 
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+/* Animation for the diagonal 1 */
+.showdiagonal1 {
+  width: 100%;
+  animation: diagonal1Animation 0.4s ease;
+}
+@keyframes diagonal1Animation {
+  from {
+    transform: scale(0) rotate(45deg);
+  } 
+  to {
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+/* Animation for the diagonal 2 */
+.showdiagonal2 {
+  width: 100%;
+  animation: diagonal2Animation 0.4s ease;
+}
+@keyframes diagonal2Animation {
+  from {
+    transform: scale(0) rotate(-45deg);
+  } 
+  to {
+    transform: scale(1) rotate(-45deg);
   }
 }
